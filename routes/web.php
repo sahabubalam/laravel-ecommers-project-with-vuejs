@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.home');
 });
 
 Auth::routes();
@@ -41,5 +41,13 @@ Route::get('/product','Admin\Product\ProductController@AllProduct');
 Route::get('/delete-product/{id}','Admin\Product\ProductController@DeleteProduct');
 Route::get('/edit-product/{id}','Admin\Product\ProductController@EditProduct');
 Route::post('/update-product/{id}','Admin\Product\ProductController@UpdateProduct');
+
+//blogpost
+Route::post('/add-blogpost','Admin\Blogpost\BlogpostController@AddBlogpost');
+Route::get('/blogpost','Admin\Blogpost\BlogpostController@AllBlogpost');
+Route::get('/delete-blogpost/{id}','Admin\Blogpost\BlogpostController@DeleteBlogpost');
+Route::get('/edit-blogpost/{id}','Admin\Blogpost\BlogpostController@EditBlogpost');
+Route::post('/update-blogpost/{id}','Admin\Blogpost\BlogpostController@UpdateBlogpost');
+
 
 

@@ -111,7 +111,7 @@
           </a>
           <div id="collapsefive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <router-link to="" class="collapse-item" >blogpost</router-link>
+              <router-link to="/blogpost-list" class="collapse-item" >blogpost</router-link>
             </div>
           </div>
         </li>

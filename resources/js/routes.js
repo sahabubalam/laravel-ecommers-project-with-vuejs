@@ -1,3 +1,4 @@
+//For admin
 import AdminHome from './components/admin/AdminMaster.vue'
 import CategoryList from './components/admin/category/List.vue'
 import AddCategory from './components/admin/category/New.vue'
@@ -13,7 +14,13 @@ import ProductList from './components/admin/product/List.vue'
 import AddProduct from './components/admin/product/New.vue'
 import EditProduct from './components/admin/product/Edit.vue'
 //blogpost
-import AddBlogpost from './components/admin/blogpost/List.vue'
+import BlogpostList from './components/admin/blogpost/List.vue'
+import AddBlogpost from './components/admin/blogpost/New.vue'
+import EditBlogpost from './components/admin/blogpost/Edit.vue'
+//for frontend
+
+import Category from './components/frontend/Category.vue'
+
 export const routes=[
     {
         path:'/home',
@@ -60,8 +67,23 @@ export const routes=[
     },
     //blogpost
     {
+        path:'/blogpost-list',
+        component:BlogpostList
+    },
+    {
         path:'/add-blogpost',
         component:AddBlogpost
-    }
+    },
+    {
+        path:'/edit-blogpost/:id',
+        component:EditBlogpost
+    },
+    //public home
+    
+    {
+        path:'/',
+        component:Category,
+    },
+    
 
 ];

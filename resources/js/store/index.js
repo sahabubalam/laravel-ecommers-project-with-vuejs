@@ -5,6 +5,7 @@ export default{
         category:[],
         brand:[],
         product:[],
+        blogpost:[],
     },
     getters:
     {
@@ -19,6 +20,10 @@ export default{
         getProduct(state)
         {
             return state.product
+        },
+        getBlogpost(state)
+        {
+            return state.blogpost
         }
     },
     actions:
@@ -44,6 +49,13 @@ export default{
             .then((response)=>{
                 context.commit("products",response.data.products)
             })
+        },
+        GetAllBlogpost(context)
+        {
+            axios.get('/blogpost')
+            .then((response)=>{
+                context.commit("blogposts",response.data.blogposts)
+            })
         }
     },
     mutations:
@@ -59,6 +71,10 @@ export default{
         products(state,data)
         {
             return state.product=data
+        },
+        blogposts(state,data)
+        {
+            return state.blogpost=data
         }
     }
 }

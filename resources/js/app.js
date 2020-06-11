@@ -47,6 +47,7 @@ window.Form=Form;
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('admin-main', require('./components/admin/AdminMaster.vue').default);
+Vue.component('public-main', require('./components/frontend/PublicMaster.vue').default);
 
 //sweetalert2
 import Swal from 'sweetalert2'
