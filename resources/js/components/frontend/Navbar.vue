@@ -25,5 +25,37 @@
                         </li>
                     </ul>
                 </nav>
+                
+
+                
+                
     </div>
+    
+  
 </template>
+<script>
+import LeftSidebar from "./LeftSidebar.vue"
+    export default{
+        name:"Category",
+        components:
+        {
+            LeftSidebar
+        },
+       computed:
+        {
+           
+           
+        },
+        mounted()
+        {
+            
+            
+        },
+        methods:
+        {
+          
+        }
+    }
+</script>  
+<style scoped>
+ </style>    

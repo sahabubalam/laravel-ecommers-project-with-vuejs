@@ -21,6 +21,7 @@ import EditBlogpost from './components/admin/blogpost/Edit.vue'
 
 import Category from './components/frontend/Category.vue'
 
+
 export const routes=[
     {
         path:'/home',
@@ -84,6 +85,8 @@ export const routes=[
         path:'/',
         component:Category,
     },
+    
+    
     
 
 ];
