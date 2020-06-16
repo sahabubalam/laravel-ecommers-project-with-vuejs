@@ -18,8 +18,12 @@ import BlogpostList from './components/admin/blogpost/List.vue'
 import AddBlogpost from './components/admin/blogpost/New.vue'
 import EditBlogpost from './components/admin/blogpost/Edit.vue'
 //for frontend
+import PublicHome from './components/frontend/PublicHome.vue'
+import BlogPost from './components/frontend/blog/BlogPost.vue'
+import Product from './components/frontend/product/Product.vue'
 
-import Category from './components/frontend/Category.vue'
+
+
 
 
 export const routes=[
@@ -80,11 +84,19 @@ export const routes=[
         component:EditBlogpost
     },
     //public home
-    
     {
         path:'/',
-        component:Category,
+        component:PublicHome
     },
+    {
+        path:'/blog',
+        component:BlogPost
+    },
+    {
+        path:'/product/:id',
+        component:Product
+    }
+   
     
     
     

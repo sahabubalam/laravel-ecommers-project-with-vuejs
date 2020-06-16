@@ -48,8 +48,9 @@ window.Form=Form;
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('admin-main', require('./components/admin/AdminMaster.vue').default);
 Vue.component('public-main', require('./components/frontend/PublicMaster.vue').default);
-Vue.component('left-sidebar', require('./components/frontend/LeftSidebar.vue').default);
-Vue.component('right-sidebar', require('./components/frontend/RightSidebar.vue').default);
+Vue.component('category-menu', require('./components/frontend/category/Category.vue').default);
+
+
 
 //sweetalert2
 import Swal from 'sweetalert2'

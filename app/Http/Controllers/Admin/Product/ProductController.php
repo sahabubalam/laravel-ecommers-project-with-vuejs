@@ -84,24 +84,25 @@ class ProductController extends Controller
             {
                 @unlink($image);
             }
-            else
-            {
-                $name=$product->product_image;
-            }
-            $product->category_id=$request->category_id;
-            $product->brand_id=$request->brand_id;
-            $product->product_name=$request->product_name;
-            $product->product_code=$request->product_code;
-            $product->product_quantity=$request->product_quantity;
-            $product->price=$request->price;
-            $product->selling_price=$request->selling_price;
-            $product->status=$request->status;
-            
-           
-            $product->product_image = $name;
-            //return $product;
-            $product->save();
         }
+        else
+        {
+            $name=$product->product_image;
+        }
+        $product->category_id=$request->category_id;
+        $product->brand_id=$request->brand_id;
+        $product->product_name=$request->product_name;
+        $product->product_code=$request->product_code;
+        $product->product_quantity=$request->product_quantity;
+        $product->price=$request->price;
+        $product->selling_price=$request->selling_price;
+        $product->status=$request->status;
+        
+        
+        $product->product_image = $name;
+        //return $product;
+        $product->save();
+        
 
     }
 }

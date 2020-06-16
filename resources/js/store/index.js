@@ -56,6 +56,14 @@ export default{
             .then((response)=>{
                 context.commit("blogposts",response.data.blogposts)
             })
+        },
+        //get product by id
+        GetProductById(context,payload)
+        {
+            axios.get('/productbyid/'+payload)
+            .then((response)=>{
+                context.commit('productbycatid',response.data.products)
+            })
         }
     },
     mutations:
@@ -75,6 +83,12 @@ export default{
         blogposts(state,data)
         {
             return state.blogpost=data
+        },
+          //get product by id
+        productbycatid(state,data)
+        {
+            return state.product=data
         }
+
     }
 }
