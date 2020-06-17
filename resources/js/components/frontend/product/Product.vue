@@ -1,3 +1,4 @@
+  
 <template>
     <span>
 	 <!-- Categories Section Begin -->
@@ -60,7 +61,7 @@
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><router-link :to="`/shop-details/${product.id}`"><i class="fa fa-shopping-cart"></i></router-link></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
@@ -79,7 +80,6 @@
     </span>
 </template>
 <script>
-
     export default{
         name:"New",
         components:
@@ -87,7 +87,6 @@
             
            
         },
-
 		mounted()
         {
             this.$store.dispatch("GetAllProduct")
@@ -111,7 +110,7 @@
 		 getallproduct()
          {
             
-			this.$store.dispatch('GetProductById',this.$route.params.id)   
+			this.$store.dispatch('GetProductByCatId',this.$route.params.id)   
          }
           
         },
@@ -125,4 +124,4 @@
     }
 </script>  
 <style scoped>
- </style>  
+ </style>

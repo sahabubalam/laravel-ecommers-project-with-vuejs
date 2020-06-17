@@ -21,6 +21,7 @@ import EditBlogpost from './components/admin/blogpost/Edit.vue'
 import PublicHome from './components/frontend/PublicHome.vue'
 import BlogPost from './components/frontend/blog/BlogPost.vue'
 import Product from './components/frontend/product/Product.vue'
+import ShopDetails from './components/frontend/shopdetails/ShopDetails.vue'
 
 
 
@@ -93,8 +94,12 @@ export const routes=[
         component:BlogPost
     },
     {
-        path:'/product/:id',
+        path:'/product-category/:id',
         component:Product
+    },
+    {
+        path:'/shop-details/:id',
+        component:ShopDetails
     }
    
     

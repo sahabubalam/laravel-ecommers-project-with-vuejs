@@ -8,7 +8,7 @@
                         </div>
                         <ul>
                             <li v-for="category in allcategories">
-                            <router-link :to="`/product/${category.id}`">{{category.category_name}}</router-link>
+                            <router-link :to="`/product-category/${category.id}`">{{category.category_name}}</router-link>
                             </li>
                             
                         </ul>

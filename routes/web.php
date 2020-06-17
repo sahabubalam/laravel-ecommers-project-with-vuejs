@@ -50,7 +50,9 @@ Route::get('/edit-blogpost/{id}','Admin\Blogpost\BlogpostController@EditBlogpost
 Route::post('/update-blogpost/{id}','Admin\Blogpost\BlogpostController@UpdateBlogpost');
 
 //frontend
+Route::get('/productbystatus','Frontend\Product\ProductController@Product');
 Route::get('/productbyid/{id}','Frontend\Product\ProductController@AllProductById');
+Route::get('/product-details/{id}','Frontend\Product\ProductController@ProductDetailsById');
 
 
 

@@ -6,6 +6,7 @@ export default{
         brand:[],
         product:[],
         blogpost:[],
+        singleproduct:[],
     },
     getters:
     {
@@ -24,6 +25,10 @@ export default{
         getBlogpost(state)
         {
             return state.blogpost
+        },
+        singleProduct(state)
+        {
+            return state.singleproduct
         }
     },
     actions:
@@ -57,12 +62,27 @@ export default{
                 context.commit("blogposts",response.data.blogposts)
             })
         },
-        //get product by id
-        GetProductById(context,payload)
+        //get product by catid
+        GetProductByCatId(context,payload)
         {
             axios.get('/productbyid/'+payload)
             .then((response)=>{
                 context.commit('productbycatid',response.data.products)
+            })
+        },
+        GetProductByStatus(context)
+        {
+            axios.get('/productbystatus')
+            .then((response)=>{
+                context.commit('productbystatus',response.data.products)
+            })
+        },
+        //product details by id
+        GetProductById(context,payload)
+        {
+            axios.get('/product-details/'+payload)
+            .then((response)=>{
+                context.commit('single',response.data.products)
             })
         }
     },
@@ -84,10 +104,20 @@ export default{
         {
             return state.blogpost=data
         },
-          //get product by id
+          //get product by catid
         productbycatid(state,data)
         {
             return state.product=data
+        },
+        //product by status
+        productbystatus(state,data)
+        {
+            return state.product=data
+        },
+        //product details by id
+        single(state,payload)
+        {
+            return state.singleproduct=payload
         }
 
     }

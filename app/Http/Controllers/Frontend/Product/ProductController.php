@@ -12,14 +12,10 @@ use DB;
 class ProductController extends Controller
 {
     //
-    public function Product($id)
+    public function Product()
     {
         $product=DB::table('products')
-        ->join('categories','products.category_id','categories.id')
-        
-        ->join('brands','products.brand_id','brands.id')
-        ->select('products.*')
-        ->where('products.category_id','=',$id)
+       
         ->where('products.status','=','1')
         ->get();
         return response()->json([
@@ -37,6 +33,13 @@ class ProductController extends Controller
             'products'=>$product
         ], 200);
 
+    }
+    public function ProductDetailsById($id)
+    {
+        $product=Product::with('category')->where('id',$id)->first();
+        return response()->json([
+            'products'=>$product
+        ], 200);
     }
     
 }
