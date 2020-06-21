@@ -17,11 +17,18 @@ import EditProduct from './components/admin/product/Edit.vue'
 import BlogpostList from './components/admin/blogpost/List.vue'
 import AddBlogpost from './components/admin/blogpost/New.vue'
 import EditBlogpost from './components/admin/blogpost/Edit.vue'
-//for frontend
+//for frontend work
 import PublicHome from './components/frontend/PublicHome.vue'
 import BlogPost from './components/frontend/blog/BlogPost.vue'
 import Product from './components/frontend/product/Product.vue'
 import ShopDetails from './components/frontend/shopdetails/ShopDetails.vue'
+//customer
+import Login from './components/frontend/customer/Login.vue'
+import Register from './components/frontend/customer/Registration.vue'
+import CartDetails from './components/frontend/cart/CartDetails.vue'
+
+import ShippingCart from './components/frontend/cart/Shipping.vue'
+import Payment from './components/frontend/cart/Payment.vue'
 
 
 
@@ -69,7 +76,7 @@ export const routes=[
     },
     {
         path:'/edit-product/:id',
-        component:EditProduct
+        component:ShippingCart
     },
     //blogpost
     {
@@ -100,7 +107,29 @@ export const routes=[
     {
         path:'/shop-details/:id',
         component:ShopDetails
-    }
+    },
+    {
+        path:'/login',
+        component:Login
+    },
+    {
+        path:'/register',
+        component:Register
+    },
+    {
+        path:'/cart-details',
+        component:CartDetails
+    },
+   
+    {
+        path:'/shipping-cart',
+        component:ShippingCart
+    },
+    {
+        path:'/payment',
+        component:Payment
+    },
+
    
     
     

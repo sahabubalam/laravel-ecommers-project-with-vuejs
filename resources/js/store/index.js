@@ -7,6 +7,10 @@ export default{
         product:[],
         blogpost:[],
         singleproduct:[],
+        cart:[],
+        shipping:[],
+      
+
     },
     getters:
     {
@@ -29,7 +33,17 @@ export default{
         singleProduct(state)
         {
             return state.singleproduct
-        }
+        },
+        getCart(state)
+        {
+            return state.cart
+        },
+        getShipping(state)
+        {
+            return state.shipping
+        },
+        
+        
     },
     actions:
     {
@@ -84,7 +98,25 @@ export default{
             .then((response)=>{
                 context.commit('single',response.data.products)
             })
-        }
+        },
+        //get all cart list
+        GetAllCart(context)
+        {
+            axios.get('/cart-list')
+            .then((response)=>{
+                context.commit('showcarts',response.data.content)
+            })
+        },
+        GetShipping(context)
+        {
+            axios.get('/shipping-info')
+            .then((response)=>{
+                context.commit('shippings',response.data.customer)
+            })
+        },
+      
+        
+
     },
     mutations:
     {
@@ -118,7 +150,20 @@ export default{
         single(state,payload)
         {
             return state.singleproduct=payload
-        }
+        },
+        //cart list
+        showcarts(state,payload)
+        {
+            return state.cart=payload
+        },
+        shippings(state,payload)
+        {
+            return state.shipping=payload
+        },
+       
+       
+        
+      
 
     }
 }

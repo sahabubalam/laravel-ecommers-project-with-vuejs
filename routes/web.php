@@ -54,6 +54,18 @@ Route::get('/productbystatus','Frontend\Product\ProductController@Product');
 Route::get('/productbyid/{id}','Frontend\Product\ProductController@AllProductById');
 Route::get('/product-details/{id}','Frontend\Product\ProductController@ProductDetailsById');
 
+//cart
+Route::post('/add-cart/{id}','Frontend\Cart\CartController@AddToCart');
+Route::get('/cart-list','Frontend\Cart\CartController@CartList');
+
+//customer registration
+Route::post('/customer-registration','Frontend\Customer\CustomerController@CustomerRegistration');
+Route::post('/login-customer','Frontend\Customer\CustomerController@CustomerLogin');
+Route::get('/logout','Frontend\Customer\CustomerController@CustomerLogout');
+Route::get('/shipping-info','Frontend\Customer\CustomerController@ShippingInfo');
+Route::post('/customer-shipping','Frontend\Customer\CustomerController@SaveShipping');
+
+Route::post('/shipping-cart','Frontend\Cart\CartController@Payment');
 
 
 
